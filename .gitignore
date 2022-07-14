@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 .DS_Store
+LoanStats_2019Q1.csv
 
 # C extensions
 *.so
