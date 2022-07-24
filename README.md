@@ -1,34 +1,26 @@
 # Credit_Risk_Analysis
-Supervised Machine Learning models using imbalanced-learn and scikit-learn
+## Overview
+Supervised machine learning is a form of predictive analytics in which we choose the dependent variable for analysis. There are two main regression; Linear Regression are used to predict continuous variables while Logistic are used for predicting booleans. A linear regression is of the form dependent_variable = (const_1 * feat_1)+ ... +(const_n * feat_n); the predicted dependent variable is a linear combination of its features. A logistic variable is of the form log(dependent_variable/dependent_variable')= (const_1 * feat_1)+ ... +(const_n * feat_n); This relationship derives from the logit-normal pdf [Logistic Proof](https://www.countbayesie.com/blog/2021/9/30/the-logit-normal-a-ubitiqutious-but-strange-distribution). The truth value of a dependent logistic variable is determined by where it sits on the logistic curve; The graph splits results into left of the curve and right of the curve (or true and false).
 
+### Purpose
+Using Pythons' imbalanced-learn and sklearn predict credit risk 
 
-r this deliverable, you’ll write a brief summary and analysis of the performance of all the machine learning models used in this Challenge.
+## Analysis
+Like most datasets, the distribution of our dependent variable is skewed since there are substancially less high-risk users than low-risk.
 
-The report should contain the following:
+### Oversampling
+Oversampling handles this problem by adding more datapoints to the under represented group; 
+#### Naive Random 
+#### SMOTE
 
-Overview of the analysis: Explain the purpose of this analysis.
+### Underampling
+Underampling takes datapoints from the over represented group; 
+#### ClusterCentroids
 
-Results: Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all six machine learning models. Use screenshots of your outputs to support your results.
-
-Summary: Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
-
-Deliverable 4 Requirements
-Structure, Organization, and Formatting (6 points)
-The written analysis has the following structure, organization, and formatting:
-
-There is a title, and there are multiple sections (2 pt)
-Each section has a heading and subheading (2 pt)
-Links to images are working, and code is formatted and displayed correctly (2 pt).
-Analysis (24 points)
-The written analysis has the following:
-
-Overview of the loan prediction risk analysis:
-
-The purpose of this analysis is well defined (4 pt)
-Results:
-
-There is a bulleted list that describes the balanced accuracy score and the precision and recall scores of all six machine learning models (15 pt)
-Summary:
-
-There is a summary of the results (2 pt)
-There is a recommendation on which model to use, or there is no recommendation with a justification (3 pt)
+### Combination Sampling
+Combination sampling only keeps important datapoint, eliminating outliers to produce
+#### SMOTEEN
+#### Balanced Random Forest Classifier
+#### EasyEnsembleClassifier
+ 
+## Summary
