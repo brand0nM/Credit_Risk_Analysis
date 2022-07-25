@@ -20,30 +20,34 @@ Minority class members are randomly selected and added to the training set until
 Or the Synthetic Minority Oversampling Technique is similar to native random, but instead of choosing random points to add to the minority class, the results are interpolated, adding only the closest neighbors and most relevant datapoint <br/>
 ![Screen Shot 2022-07-24 at 9 36 40 AM](https://user-images.githubusercontent.com/79609464/180654773-2270f479-61f2-4327-b297-8c7ea3b1b384.png)
 
-- Though SMOTE is only choosing the most relevant points to expand our minority set, the accuracy is still poor, indicating Oversampling is not an accurate model.
-- How we oversample does not matter with this model, since their accuracy is within 1%
+- Though SMOTE is only choosing the most relevant points to expand our minority set, the accuracy is still poor, indicating Oversampling is not an accurate model
+- How we oversample does not matter with these model, since their accuracy is within 1%
+- Though we've added more data to the minority class, we havent added the right data, thus our predictions haven't changed much
 
 ### UnderSampling
 Underampling takes datapoints from the over represented group <br /><br />
 ![Screen Shot 2022-07-24 at 9 37 05 AM](https://user-images.githubusercontent.com/79609464/180654804-dd9b3e16-6123-4218-b20a-39b37399f3e0.png)
 
-##### Cluster Centroids
+##### Cluster Centroids:
+Under samples the majority class by replacing a cluster of majority samples with a cluster centroid of the KMeans algorithm. The algorithm keeps N majority samples, fitting N cluster to the majority class and using the coordinates of the N cluster centroids as the new majority samples <br/>
 ![Screen Shot 2022-07-24 at 9 37 12 AM](https://user-images.githubusercontent.com/79609464/180654815-11e9d280-c2d9-4624-8b02-64ee17f3e4b5.png)
 
-- Now I need to comment about the results here
-- and here
+- The results are significantly worse than oversampling because we've accidentaslly eliminated too many key features of the model
 
 ### Combination Sampling
-Combination sampling only keeps important datapoint, eliminating outliers to produce
-##### SMOTEEN
+As the name implies, Combination Sampling is a combination of over and undersampling the data
+
+##### SMOTEENN
+This model is a two step process. The first uses the normal SMOTE model to oversample the minority class. The second cleans data with an undersampling; If the two nearest neighbors of a data point belong to two different classes, that data point is dropped- eliminating boundaries the model has trouble classifying <br/>
 ![Screen Shot 2022-07-24 at 9 38 31 AM](https://user-images.githubusercontent.com/79609464/180654870-3459ab5b-2a9d-4234-a379-f9d99453d2a2.png)
 <br/><br/>
 ![Screen Shot 2022-07-24 at 9 39 58 AM](https://user-images.githubusercontent.com/79609464/180654940-3eb8897c-0ddc-47db-a952-ea80bb8dcc3c.png)
 
-- Just a quick comment
-- or two if necessary
+- The results are more accurate than choosing solely over or under sampling, but not by a large margin
 
 ### Ensemble Learners
+Similar to combination sampling, ensemble learners under sample subseted clusters, then combineds the result in an ensemble
+
 ##### Balanced Random Forest Classifier
 ![Screen Shot 2022-07-24 at 9 40 37 AM](https://user-images.githubusercontent.com/79609464/180654970-4129ebbe-dc5e-4c84-b125-a00655df01bf.png)
 ###### Top 15 Features
